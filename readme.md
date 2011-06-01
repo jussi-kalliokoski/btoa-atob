@@ -14,6 +14,8 @@ $ sudo npm install btoa-atob -g
 
 ```
 
+If not:
+
 ```shell
 
 $ sudo make install
