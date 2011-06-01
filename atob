@@ -19,19 +19,32 @@ function readFlag(){
 
 function onOut(){
 	var	data		= new Buffer(filedata, 'base64').toString('binary');
+	if (outPath){
+		try{
+			var	fileStream	= fs.createWriteStream(outPath, {
+				encoding:	'UTF-8'
+			});
+			fileStream.write(data);
+			return;
+		} catch(e){
+			console.log('** ERROR ** Failed to write to file @ ' + outPath);
+		}
+	}
 	process.stdout.write(prefix + data + suffix);
 }
 
 var	prefix	= readFlag('-p', '--prefix'),
 	suffix	= readFlag('-s', '--suffix'),
+	outPath	= readFlag('-o', '--output-to-file'),
 	path	= argv[0],
 	filedata	= '';
 
 if (path === '--help'){
 	console.log('Usage: atob <filepath> [flags]');
 	console.log('Flags:');
-	console.log('\t-p\t--prefix\tThe content of the file before output.');
-	console.log('\t-s\t--suffix\tThe content of the file after output.');
+	console.log('\t-p\t--prefix\t\tThe content of the file before output.');
+	console.log('\t-s\t--suffix\t\tThe content of the file after output.');
+	console.log('\t-o\t--output-to-file\tThe file to write the output to. If not specified, write to stdout.');
 } else if (path){
 	try{
 		filedata	= fs.readFileSync(path, 'binary');
