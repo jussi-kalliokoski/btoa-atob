@@ -7,3 +7,5 @@ install:
 
 uninstall:
 	rm /usr/bin/btoa /usr/bin/atob -f
+
+.PHONY: all install uninstall
