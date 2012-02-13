@@ -1,6 +1,6 @@
 {
 	"name":		"btoa-atob",
-	"version":	"0.1.1",
+	"version":	"0.1.2",
 	"description":	"CLI tools to convert files and stdin into and from base64.",
 	"homepage":	"https://github.com/jussi-kalliokoski/btoa-atob",
 	"keywords":	["base64", "btoa", "atob", "convert", "cli", "tools"],
