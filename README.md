@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/jussi-kalliokoski/btoa-atob.png)](http://travis-ci.org/jussi-kalliokoski/btoa-atob)
 btoa-atob
 =========
 
