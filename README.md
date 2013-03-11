@@ -3,6 +3,11 @@ btoa-atob
 
 NodeJS-based command line utility to convert files to base64 and vice versa.
 
+Warning
+-------
+
+You're probably better off using a more established btoa/atob converter, such as btoa.
+
 Installation
 ------------
 
